@@ -51,7 +51,7 @@ I make it in order to create an up-to-date starter repo which contains all impor
 * [x] [Logsene](https://sematext.com/logsene/)
 * [x] [Logz.io](http://logz.io/)
 
-## Usage
+## Installation
 
 Install dependencies
 ```
@@ -61,6 +61,19 @@ or
 ```
 yarn
 ```
+
+Make sure you have mongodb installed for back-end:
+
+Windows:
+https://treehouse.github.io/installation-guides/windows/mongo-windows.html
+
+Mac:
+https://treehouse.github.io/installation-guides/mac/mongo-mac.html
+
+NOTE: For local dev, make all MongoDB data redirect to data/db inside main project structure 
+Run the following: `mongod --dbpath=$PWD/data/db`
+
+## Usage
 
 For development
 ```bash
