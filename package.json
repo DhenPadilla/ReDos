@@ -2,7 +2,7 @@
   "name": "ReDoS",
   "version": "0.0.1",
   "scripts": {
-    "start": "node index.js",
+    "start": "node_modules/.bin/nodemon index.js --exec babel-node --",
     "tests": "node tests/run-all.js"
   },
   "description": "This package contains a list of ReDoS vulnerabilities reported by the SOLA group as part of the research paper 'Freezing the Web: A Study of ReDoS Vulnerabilities in JavaScript-based Web Servers'.",
@@ -10,6 +10,7 @@
     "ajv": "5.2.2",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
+    "body-parser": "^1.19.0",
     "charset": "1.0.0",
     "content": "3.0.5",
     "content-type-parser": "1.0.1",
@@ -34,5 +35,8 @@
     "tough-cookie": "2.3.2",
     "ua-parser-js": "0.7.13",
     "underscore.string": "3.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }

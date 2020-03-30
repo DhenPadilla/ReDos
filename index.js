@@ -1,17 +1,25 @@
-var express = require("express");
+import express from "express";
+import db from "./db/db";
+import bodyParser from "body-parser";
+
 var app = express();
+// Parse incoming requests data
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-const utils = require("./utils").measureTime;
+// const utils = require("./utils").measureTime;
 
-var charset = require('charset');
-var Ajv = require('ajv');
+import utils from "./utils";
+var measureTime = utils.measureTime;
+
+import charset from "charset";
+import Ajv from "ajv";
 var ajv = new Ajv;
 
-
-app.listen(3000, () => {
- console.log("Server running on port 3000");
+const PORT = 3000;
+app.listen(PORT, () => {
+ console.log(`Server running on port ${PORT}`);
 });
-
 
 // AJV 
 var format_ajv = function(str) {
@@ -29,9 +37,19 @@ var format_ajv = function(str) {
 }
 
 app.post("/ajv/dos", (req, res, next) => {
+    if(!req.body.title) {
+        return res.status(400).send({
+          success: 'false',
+          message: 'title is required'
+        });
+      }
     var inp = format_ajv(req.body.title);
     var time_taken = measureTime(ajv.compile(inp)); 
-    res.json(time_taken);
+    return res.status(200).send({
+        success: 'true',
+        message: 'Post Request works!',
+        time_taken,
+      });
 })
 
 
