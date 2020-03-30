@@ -33,10 +33,15 @@ runAjvDos() {
 }
 
 runCharsetDos() {
-    generate 40000 " "
-    curl -d "@../data.json" -H "Content-Type: application/json" -X POST http://localhost:3000/charset/dos > out.txt
+    fin="$(generate 40000 " ")"
+    makeJson $
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST http://localhost:3000/charset/dos
 }
 
-# runAjvDos
+runFreshDos() {
+    fin="$(generate 60000 " ")x"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST http://localhost:3000/fresh/dos
+}
 
-runCharsetDos
+runFreshDos

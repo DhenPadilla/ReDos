@@ -65,7 +65,7 @@ app.post("/charset/dos", (req, res, next) => {
         });
       }
     var inp = formatter.charset(req.body.title);
-    var time_taken = measureTime(function (){ charset(inp)}); 
+    var time_taken = measureTime(function () { charset(inp) }); 
     return res.status(200).send({
         success: 'true',
         message: 'Post Request works!',
@@ -186,7 +186,7 @@ app.post("/fresh/dos", (req, res, next) => {
         });
       }
     var inp = formatter.fresh(req.body.title);
-    var time_taken = measureTime(function (){fresh(inp)}); 
+    var time_taken = measureTime(function () { fresh(inp) }); 
     return res.status(200).send({
         success: 'true',
         message: 'Post Request works!',
