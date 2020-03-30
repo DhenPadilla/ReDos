@@ -30,6 +30,7 @@ tests/e2e/reports
 node_modules
 npm-debug.log
 package-lock.json
+data.json
 
 # SASS temp files
 .sass-cache
