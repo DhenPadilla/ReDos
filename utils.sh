@@ -84,3 +84,33 @@ runPlatformDos(){
     makeJson $fin
     url -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/platform/dos
 }
+
+runSlugDos(){
+    fin="$(generate 50000 " ")"
+    makeJson $fin
+    url -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/slug/dos
+}
+
+runStringDos(){
+    fin="$(generate 50000 "9")"
+    makeJson $fin
+    url -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/string/dos
+}
+
+runToughCookieDos(){
+    fin="$(generate 50000 " ")"
+    makeJson $fin
+    url -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/tough_cookie/dos
+}
+
+runTimespanDos(){
+    fin="$(generate 30000 "1")"
+    makeJson $fin
+    url -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/timespan/dos
+}
+
+runUnderscoreStringDos(){
+    fin="$(generate 50000 "&")"
+    makeJson $fin
+    url -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/underscore_string/dos
+}

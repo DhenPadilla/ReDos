@@ -17,3 +17,10 @@ runMimeDos
 runMobileDetectDos
 runMomentDos
 runNoCaseDos
+runParsejsonDos
+runPlatformDos
+runSlugDos
+runStringDos
+runToughCookieDos
+runTimespanDos
+runUnderscoreStringDos
