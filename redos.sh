@@ -13,4 +13,7 @@ else
   URL="hostname"
 fi
 
-runLodashDos
+runMimeDos
+runMobileDetectDos
+runMomentDos
+runNoCaseDos

