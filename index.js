@@ -24,6 +24,7 @@ import slug from "slug";
 import string from "string";
 import tough from "tough-cookie";
 import timespan from "timespan";
+import us from "underscore.string";
 
 import formatter from "./formatter";
 
@@ -251,5 +252,25 @@ app.post("/timespan/dos", (req, res) => {
 })
 
 app.post("/timespan/mitigation", (req, res) => {
+  
+})
+
+app.post("/underscore_string/dos", (req, res) => {
+  if(!req.body.title) {
+    return res.status(400).send({
+      success: 'false',
+      message: 'title is required'
+    });
+  }
+  var inp = formatter.underscore_string(req.body.title);
+  var time_taken = measureTime(function(){us.unescapeHTML(inp)}); 
+  return res.status(200).send({
+    success: 'true',
+    message: 'Post Request works!',
+    time_taken,
+  });
+})
+
+app.post("/underscore_string/mitigation", (req, res) => {
   
 })
