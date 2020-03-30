@@ -26,6 +26,18 @@ var ismobilejs = require('ismobilejs');
 var lod = require('lodash');
 var marked = require('marked');
 
+import mime from "mime"; 
+import MobileDetect from "mobile-detect";
+import moment from "moment";
+import cc from "no-case";
+import parsejson from "parsejson";
+import platform from "platform";
+import slug from "slug";
+import string from "string";
+import tough from "tough-cookie";
+import timespan from "timespan";
+import us from "underscore.string";
+
 
 import formatter from "./formatter";
 
@@ -43,7 +55,7 @@ app.post("/ajv/dos", (req, res, next) => {
         });
       }
     var inp = formatter.ajv(req.body.title);
-    var time_taken = measureTime(ajv.compile(inp)); 
+    var time_taken = measureTime(function(){ajv.compile(inp)}); 
     return res.status(200).send({
         success: 'true',
         message: 'Post Request works!',
@@ -55,7 +67,6 @@ app.post("/ajv/dos", (req, res, next) => {
 app.post("/ajv/mitigation", (req, res) => {
     // Add mitigation for ajv here.
 })
-
 
 app.post("/charset/dos", (req, res, next) => {
     if(!req.body.title) {
@@ -263,20 +274,222 @@ app.post("/marked/dos", (req, res, next) => {
 })
 
 
+app.post("/mime/dos", (req, res) => {
+  if(!req.body.title) {
+    return res.status(400).send({
+      success: 'false',
+      message: 'title is required'
+    });
+  }
+  var inp = formatter.mime(req.body.title);
+  var time_taken = measureTime(function(){mime.lookup(inp)}); 
+  return res.status(200).send({
+    success: 'true',
+    message: 'Post Request works!',
+    time_taken,
+  });
+})
 
+app.post("/mime/mitigation", (req, res) => {
 
+})
 
+app.post("/mobile_detect/dos", (req, res) => {
+  if(!req.body.title) {
+    return res.status(400).send({
+      success: 'false',
+      message: 'title is required'
+    });
+  }
+  var inp = formatter.mobile_detect(req.body.title);
+  var md = new MobileDetect(inp)
+  var time_taken = measureTime(function(){md.phone()}); 
+  return res.status(200).send({
+    success: 'true',
+    message: 'Post Request works!',
+    time_taken,
+  });
+})
 
+app.post("/mobile_detect/mitigation", (req, res) => {
+})
 
+app.post("/moment/dos", (req, res) => {
+  if(!req.body.title) {
+    return res.status(400).send({
+      success: 'false',
+      message: 'title is required'
+    });
+  }
+  var inp = formatter.moment(req.body.title);
+  var time_taken = measureTime(function(){moment(inp, "MMM")}); 
+  return res.status(200).send({
+    success: 'true',
+    message: 'Post Request works!',
+    time_taken,
+  });
+})
 
+app.post("/moment/mitigation", (req, res) => {
+  
+})
 
+app.post("/no_case/dos", (req, res) => {
+  if(!req.body.title) {
+    return res.status(400).send({
+      success: 'false',
+      message: 'title is required'
+    });
+  }
+  var inp = formatter.no_case(req.body.title);
+  var time_taken = measureTime(function(){cc(inp)}); 
+  return res.status(200).send({
+    success: 'true',
+    message: 'Post Request works!',
+    time_taken,
+  });
+})
 
+app.post("/no_case/mitigation", (req, res) => {
 
+})
 
+app.post("/parsejson/dos", (req, res) => {
+  if(!req.body.title) {
+    return res.status(400).send({
+      success: 'false',
+      message: 'title is required'
+    });
+  }
+  var inp = formatter.parsejson(req.body.title);
+  var time_taken = measureTime(function(){parsejson(inp)}); 
+  return res.status(200).send({
+    success: 'true',
+    message: 'Post Request works!',
+    time_taken,
+  });
+})
 
+app.post("/parsejson/mitigation", (req, res) => {
 
+})
 
+app.post("/platform/dos", (req, res) => {
+  if(!req.body.title) {
+    return res.status(400).send({
+      success: 'false',
+      message: 'title is required'
+    });
+  }
+  var inp = formatter.platform(req.body.title);
+  var time_taken = measureTime(function(){platform.parse(inp)}); 
+  return res.status(200).send({
+    success: 'true',
+    message: 'Post Request works!',
+    time_taken,
+  });
+})
 
+app.post("/platform/mitigation", (req, res) => {
+  
+})
 
+app.post("/slug/dos", (req, res) => {
+  if(!req.body.title) {
+    return res.status(400).send({
+      success: 'false',
+      message: 'title is required'
+    });
+  }
+  var inp = formatter.slug(req.body.title);
+  var time_taken = measureTime(function(){slug(inp)}); 
+  return res.status(200).send({
+    success: 'true',
+    message: 'Post Request works!',
+    time_taken,
+  });
+})
 
+app.post("/slug/mitigation", (req, res) => {
+  
+})
 
+app.post("/string/dos", (req, res) => {
+  if(!req.body.title) {
+    return res.status(400).send({
+      success: 'false',
+      message: 'title is required'
+    });
+  }
+  var inp = formatter.string(req.body.title);
+  var time_taken = measureTime(function(){string(inp).underscore()}); 
+  return res.status(200).send({
+    success: 'true',
+    message: 'Post Request works!',
+    time_taken,
+  });
+})
+
+app.post("/string/mitigation", (req, res) => {
+  
+})
+
+app.post("/tough_cookie/dos", (req, res) => {
+  if(!req.body.title) {
+    return res.status(400).send({
+      success: 'false',
+      message: 'title is required'
+    });
+  }
+  var inp = formatter.tough_cookie(req.body.title);
+  var time_taken = measureTime(function(){tough.Cookie.parse(inp)}); 
+  return res.status(200).send({
+    success: 'true',
+    message: 'Post Request works!',
+    time_taken,
+  });
+})
+
+app.post("/tough_cookie/mitigation", (req, res) => {
+  
+})
+
+app.post("/timespan/dos", (req, res) => {
+  if(!req.body.title) {
+    return res.status(400).send({
+      success: 'false',
+      message: 'title is required'
+    });
+  }
+  var inp = formatter.timespan(req.body.title);
+  var time_taken = measureTime(function(){timespan.parseDate(inp)}); 
+  return res.status(200).send({
+    success: 'true',
+    message: 'Post Request works!',
+    time_taken,
+  });
+})
+
+app.post("/timespan/mitigation", (req, res) => {
+  
+})
+
+app.post("/underscore_string/dos", (req, res) => {
+  if(!req.body.title) {
+    return res.status(400).send({
+      success: 'false',
+      message: 'title is required'
+    });
+  }
+  var inp = formatter.underscore_string(req.body.title);
+  var time_taken = measureTime(function(){us.unescapeHTML(inp)}); 
+  return res.status(200).send({
+    success: 'true',
+    message: 'Post Request works!',
+    time_taken,
+  });
+})
+
+app.post("/underscore_string/mitigation", (req, res) => {
+  
+})
