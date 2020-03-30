@@ -8,6 +8,8 @@
   "description": "This package contains a list of ReDoS vulnerabilities reported by the SOLA group as part of the research paper 'Freezing the Web: A Study of ReDoS Vulnerabilities in JavaScript-based Web Servers'.",
   "dependencies": {
     "ajv": "5.2.2",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "charset": "1.0.0",
     "content": "3.0.5",
     "content-type-parser": "1.0.1",

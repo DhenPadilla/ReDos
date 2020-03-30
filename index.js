@@ -12,12 +12,8 @@ app.listen(3000, () => {
  console.log("Server running on port 3000");
 });
 
-app.post("/ajv/dos", (req, res, next) => {
-    var inp = format_ajv(req.body.title);
-    var time_taken = measureTime(ajv.compile(inp)); 
-    res.json(time_taken);
-})
 
+// AJV 
 var format_ajv = function(str) {
     return {
         "type": "object",
@@ -32,12 +28,13 @@ var format_ajv = function(str) {
     }
 }
 
-app.post("/ajv/mitigation", (req, res) => {
-
+app.post("/ajv/dos", (req, res, next) => {
+    var inp = format_ajv(req.body.title);
+    var time_taken = measureTime(ajv.compile(inp)); 
+    res.json(time_taken);
 })
 
-// app.get("/", (req, res, next) => {
-//     // req == genstr()
-//     final_req = //Format of ajv DoS {}
-//     res.json("Hello World!");
-// })
+
+app.post("/ajv/mitigation", (req, res) => {
+    // Add mitigation for ajv here.
+})
