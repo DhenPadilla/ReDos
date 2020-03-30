@@ -68,3 +68,6 @@ typings
 # IDEA
 .idea
 *.iml
+
+# Test File
+test.json
