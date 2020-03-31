@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source ./utils.sh
+source ./utilsnormal.sh
 
 set +x
 
@@ -13,7 +14,8 @@ then
   URL="http://redos.westeurope.cloudapp.azure.com:3000"
 fi
 
-runLodashDos
+runCharset
+# runLodashDos
 # runCharsetDos
 # runMimeDos
 # runMobileDetectDos
