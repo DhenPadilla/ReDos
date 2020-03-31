@@ -61,7 +61,7 @@ config.js
 config.json
 
 # Data folder
-data
+# data
 
 # Typings definitions
 typings
