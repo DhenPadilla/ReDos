@@ -79,7 +79,7 @@ const formatter = {
 	},
 
 	moment: function(str) {
-		return str;
+		return str + "";
 	},
 
 	no_case: function(str) {
