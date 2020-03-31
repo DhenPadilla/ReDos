@@ -136,26 +136,6 @@ app.post("/debug/dos", (req, res, next) => {
       });
 })
 
-app.post("/debug/dos", (req, res, next) => {
-    process.env.DEBUG = "*";
-    var error = debug('app:error');
-    error.log = function () {
-    };
-    if(!req.body.title) {
-        return res.status(400).send({
-          success: 'false',
-          message: 'title is required'
-        });
-      }
-    var inp = formatter.debug(req.body.title);
-    var time_taken = measureTime(function (){error('x %o', inp)}); 
-    return res.status(200).send({
-        success: 'true',
-        message: 'Post Request works!',
-        time_taken,
-      });
-})
-
 app.post("/dns-sync/dos", (req, res, next) => {
     if(!req.body.title) {
         return res.status(400).send({
