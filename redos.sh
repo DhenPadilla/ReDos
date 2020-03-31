@@ -14,9 +14,41 @@ then
   URL="http://redos.westeurope.cloudapp.azure.com:3000"
 fi
 
-runCharset
-# runLodashDos
+# runAjv
+# runCharset
+# runContentTypeParser
+# runContent
+# runDebug
+# runDnsSync
+# runForwarded
+# runFresh
+# runHtmlParser
+# runIsMobileJs
+# runLodash
+# runMime
+# runMobileDetect
+# runMoment
+# runNoCase 
+# runParsejson 
+# runPlatform 
+# runSlug 
+# runString 
+# runToughCookie 
+# runTimespan 
+# runUnderscoreString 
+# runMarked
+
+# runAjvDos
 # runCharsetDos
+# runContentTypeParserDos
+# runContentDos
+# runDebugDos
+# runDnsSyncDos
+# runForwardedDos
+# runFreshDos
+# runHtmlParserDos
+# runIsMobileJsDos
+# runLodashDos
 # runMimeDos
 # runMobileDetectDos
 # runMomentDos
@@ -28,3 +60,4 @@ runCharset
 # runToughCookieDos
 # runTimespanDos
 # runUnderscoreStringDos
+# runMarkedDos
