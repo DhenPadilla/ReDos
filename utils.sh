@@ -32,7 +32,7 @@ runAjvDos() {
 }
 
 runCharsetDos() {
-    fin="$(generate 40000 " ")"
+    fin="$(generate 40000 ` `)"
     makeJson $fin
     curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/charset/dos
 }
@@ -46,5 +46,13 @@ runFreshDos() {
 runLodashDos() {
     fin="$(generate 80000 "A")"
     makeJson $fin
+    echo "Attempting POST request"
+    start=`date +%s`
     curl -d "@../data.json" -H "Content-Type: application/json" -X POST ${URL}/lodash/dos
+    echo ""
+    echo "POST request complete: "
+    end=`date +%s`
+    runtime=$((end-start))
+    echo "Took: ${runtime}s" 
 }
+
