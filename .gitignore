@@ -73,3 +73,6 @@ typings
 # Test File
 test.json
 tests/
+
+# .vscode
+.vscode/
