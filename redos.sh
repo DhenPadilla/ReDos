@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source ./utils.sh
+source ./utilsnormal.sh
 
 set +x
 
@@ -13,18 +14,42 @@ then
   URL="http://redos.westeurope.cloudapp.azure.com:3000"
 fi
 
-#runAjvDos
-#runCharsetDos
-#runContentTypeParserDos
-#runContentDos
-#runDebugDos
-#runDnsSyncDos
-#runForwardedDos
-#runHtmlParserDos
-#runIsMobileJsDos
-#runLodashDos
-#runFreshDos
-#runMimeDos
+# runAjv
+# runCharset
+# runContentTypeParser
+# runContent
+# runDebug
+# runDnsSync
+# runForwarded
+# runFresh
+# runHtmlParser
+# runIsMobileJs
+# runLodash
+# runMime
+# runMobileDetect
+# runMoment
+# runNoCase 
+# runParsejson 
+# runPlatform 
+# runSlug 
+# runString 
+# runToughCookie 
+# runTimespan 
+# runUnderscoreString 
+# runMarked
+
+runAjvDos
+runCharsetDos
+runContentTypeParserDos
+runContentDos
+runDebugDos
+runDnsSyncDos
+runForwardedDos
+runFreshDos
+runHtmlParserDos
+runIsMobileJsDos
+runLodashDos
+runMimeDos
 runMobileDetectDos
 runMomentDos
 runNoCaseDos
@@ -35,3 +60,4 @@ runStringDos
 runToughCookieDos
 runTimespanDos
 runUnderscoreStringDos
+runMarkedDos
