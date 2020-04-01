@@ -14,50 +14,58 @@ then
   URL="http://redos.westeurope.cloudapp.azure.com:3000"
 fi
 
-# runAjv
-# runCharset
-# runContentTypeParser
-# runContent
-# runDebug
-# runDnsSync
-# runForwarded
-# runFresh
-# runHtmlParser
-# runIsMobileJs
-#runLodash
-# runMime
-# runMobileDetect
-# runMoment
-# runNoCase 
-# runParsejson 
-# runPlatform 
-# runSlug 
-# runString 
-# runToughCookie 
-# runTimespan 
-# runUnderscoreString 
-# runMarked
+###
+# Some tests are comment out by default since the dos input
+# and the random input have little to no difference 
 
-# runAjvDos
-# runCharsetDos
-# runContentTypeParserDos
-# runContentDos
-# runDebugDos
-# runDnsSyncDos
-# runForwardedDos
-# runFreshDos
-# runHtmlParserDos
-# runIsMobileJsDos
-runLodashMitigation
-# runMimeDos
-# runMobileDetectDos
-# runMomentDos
-# runNoCaseDos
-# runParsejsonDos
-# runPlatformDos
-# runSlugDos
-# runStringDos
-# runToughCookieDos
-# runTimespanDos
-# runUnderscoreStringDos
-# runMarkedDos
+### Send random data to server
+printf "Tests with random data\n"
+runAjv
+runCharset
+runContentTypeParser
+runContent
+# runDebug             <<< little to no change
+runDnsSync
+# runForwarded         <<< little to no change
+# runFresh             <<< little to no change
+runHtmlParser
+# runLodash            <<< little to no change
+runMime
+# runMobileDetect      <<< little to no change
+runMoment
+runNoCase 
+runParsejson 
+runPlatform 
+runSlug 
+runString 
+runToughCookie 
+runTimespan 
+runUnderscoreString 
+runMarked
+
+printf "\n\n"
+
+### send crafted(malicious) data to server
+printf "Tests with malicious data\n"
+runAjvDos
+runCharsetDos
+runContentTypeParserDos
+runContentDos
+# runDebugDos         <<< little to no change
+runDnsSyncDos
+# runForwardedDos     <<< little to no change
+# runFreshDos         <<< little to no change
+runHtmlParserDos
+# runLodashDos        <<< little to no change
+runMimeDos
+# runMobileDetectDos  <<< little to no change
+runMomentDos
+runNoCaseDos
+runParsejsonDos
+runPlatformDos
+runSlugDos
+runStringDos
+runToughCookieDos
+runTimespanDos
+runUnderscoreStringDos
+runMarkedDos
