@@ -24,7 +24,7 @@ fi
 # runFresh
 # runHtmlParser
 # runIsMobileJs
-# runLodash
+#runLodash
 # runMime
 # runMobileDetect
 # runMoment
@@ -48,7 +48,7 @@ fi
 # runFreshDos
 # runHtmlParserDos
 # runIsMobileJsDos
-# runLodashDos
+runLodashMitigation
 # runMimeDos
 # runMobileDetectDos
 # runMomentDos

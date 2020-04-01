@@ -2,7 +2,7 @@
   "name": "ReDoS",
   "version": "0.0.1",
   "scripts": {
-    "start": "node_modules/.bin/nodemon index.js --exec babel-node --",
+    "start": "node_modules/.bin/nodemon index.js --ignore 'data/' --exec babel-node --",
     "tests": "node tests/run-all.js"
   },
   "description": "This package contains a list of ReDoS vulnerabilities reported by the SOLA group as part of the research paper 'Freezing the Web: A Study of ReDoS Vulnerabilities in JavaScript-based Web Servers'.",

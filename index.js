@@ -46,6 +46,10 @@ app.listen(PORT, () => {
  console.log(`Server running on port ${PORT}`);
 });
 
+app.get("/echo", (req, res) => {
+  return res.status(200).send("Hello World!");
+})
+
 
 app.post("/ajv/dos", (req, res, next) => {
     if(!req.body.title) {
@@ -235,6 +239,28 @@ app.post("/lodash/dos", (req, res, next) => {
         time_taken,
       });
 })
+
+app.post("/lodash/mitigation", (req, res) => {
+  if(!req.body.title) {
+    return res.status(400).send({
+      success: 'false',
+      message: 'title is required'
+    });
+  }
+  else if(req.body.title.length > 10000) {
+    return res.status(400).send({
+      success: 'false',
+      message: 'We do not accept input with this pattern. Maybe try again with a shorter pattern.'
+    });
+  }
+    var inp = formatter.marked(req.body.title);
+    var time_taken = measureTime(function (){marked(inp)}); 
+    return res.status(200).send({
+        success: 'true',
+        message: 'Post Request works!',
+        time_taken,
+      });
+});
 
 app.post("/marked/dos", (req, res, next) => {
     if(!req.body.title) {
