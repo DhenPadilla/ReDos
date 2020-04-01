@@ -253,6 +253,13 @@ app.post("/lodash/mitigation", (req, res) => {
       message: 'We do not accept input with this pattern. Maybe try again with a shorter pattern.'
     });
   }
+    var inp = formatter.marked(req.body.title);
+    var time_taken = measureTime(function (){marked(inp)}); 
+    return res.status(200).send({
+        success: 'true',
+        message: 'Post Request works!',
+        time_taken,
+      });
 });
 
 app.post("/marked/dos", (req, res, next) => {

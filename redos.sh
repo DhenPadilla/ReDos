@@ -24,7 +24,7 @@ fi
 # runFresh
 # runHtmlParser
 # runIsMobileJs
-# runLodash
+#runLodash
 # runMime
 # runMobileDetect
 # runMoment
@@ -38,26 +38,26 @@ fi
 # runUnderscoreString 
 # runMarked
 
-runAjvDos
-runCharsetDos
-runContentTypeParserDos
-runContentDos
-runDebugDos
-runDnsSyncDos
-runForwardedDos
-runFreshDos
-runHtmlParserDos
-runIsMobileJsDos
-runLodashDos
-runMimeDos
-runMobileDetectDos
-runMomentDos
-runNoCaseDos
-runParsejsonDos
-runPlatformDos
-runSlugDos
-runStringDos
-runToughCookieDos
-runTimespanDos
-runUnderscoreStringDos
-runMarkedDos
+# runAjvDos
+# runCharsetDos
+# runContentTypeParserDos
+# runContentDos
+# runDebugDos
+# runDnsSyncDos
+# runForwardedDos
+# runFreshDos
+# runHtmlParserDos
+# runIsMobileJsDos
+runLodashMitigation
+# runMimeDos
+# runMobileDetectDos
+# runMomentDos
+# runNoCaseDos
+# runParsejsonDos
+# runPlatformDos
+# runSlugDos
+# runStringDos
+# runToughCookieDos
+# runTimespanDos
+# runUnderscoreStringDos
+# runMarkedDos

@@ -76,6 +76,17 @@ runLodashDos() {
     echo "Took: ${runtime}s" 
 }
 
+runLodashMitigation() {
+    echo "Attempting POST request"
+    start=`date +%s`
+    curl -d "@./data/lodashdosdata.json" -H "Content-Type: application/json" -X POST ${URL}/lodash/mitigation
+    echo ""
+    echo "POST request complete: "
+    end=`date +%s`
+    runtime=$((end-start))
+    echo "Took: ${runtime}s" 
+}
+
 runMimeDos(){
     curl -d "@./data/mimedosdata.json" -H "Content-Type: application/json" -X POST ${URL}/mime/dos
 }
