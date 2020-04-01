@@ -7,7 +7,7 @@ function measureTime(f, print) {
     } else {
         console.info("Execution time (hr): %ds %dms", end[0], end[1] / 1000000);
     }
-    return end;
+    return ("%ds % dms", end[0], end[1] / 1000000);
 }
 
 module.exports.measureTime = measureTime;
