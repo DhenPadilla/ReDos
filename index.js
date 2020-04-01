@@ -240,6 +240,21 @@ app.post("/lodash/dos", (req, res, next) => {
       });
 })
 
+app.post("/lodash/mitigation", (req, res) => {
+  if(!req.body.title) {
+    return res.status(400).send({
+      success: 'false',
+      message: 'title is required'
+    });
+  }
+  else if(req.body.title.length > 10000) {
+    return res.status(400).send({
+      success: 'false',
+      message: 'We do not accept input with this pattern. Maybe try again with a shorter pattern.'
+    });
+  }
+});
+
 app.post("/marked/dos", (req, res, next) => {
     if(!req.body.title) {
         return res.status(400).send({
