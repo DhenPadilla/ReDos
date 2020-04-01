@@ -60,7 +60,6 @@ app.post("/ajv/dos", (req, res, next) => {
         success: 'true',
         message: 'Post Request works!',
         time_taken,
-        inp,
       });
 })
 
