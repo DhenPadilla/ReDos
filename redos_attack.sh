@@ -2,6 +2,8 @@
 
 set +x
 
+source ./utils.sh
+
 URL=""
 if [ $1 == "-l" ]
 then
@@ -12,9 +14,9 @@ then
 fi
 
 start=`date +%s`
-for ((i = 0; i <= 100; i++))
+for ((i = 0; i <= 1000; i++))
 do
-    curl -H "Content-Type: application/json" -X GET ${URL}/echo
+    runLodashDos & \
 done
 end=`date +%s`
 runtime=$((end-start))
