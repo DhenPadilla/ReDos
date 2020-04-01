@@ -46,6 +46,10 @@ app.listen(PORT, () => {
  console.log(`Server running on port ${PORT}`);
 });
 
+app.get("/echo", (req, res) => {
+  return res.status(200).send("Hello World!");
+})
+
 
 app.post("/ajv/dos", (req, res, next) => {
     if(!req.body.title) {
