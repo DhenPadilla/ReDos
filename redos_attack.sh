@@ -16,7 +16,7 @@ fi
 start=`date +%s`
 for ((i = 0; i <= 1000; i++))
 do
-    runLodashDos & \
+    runLodashDos &> ./output/output_${i}.log & \
 done
 end=`date +%s`
 runtime=$((end-start))
