@@ -14,9 +14,9 @@ then
 fi
 
 start=`date +%s`
-for ((i = 0; i <= 1000; i++))
+for ((i = 0; i <= 100; i++))
 do
-    runLodashDos &> ./output/output_${i}.log & \
+    runLodashMitigation &> ./output/output_${i}.log & \
 done
 end=`date +%s`
 runtime=$((end-start))
