@@ -27,9 +27,9 @@ runContent
 # runDebug             <<< little to no change
 runDnsSync
 # runForwarded         <<< little to no change
-# runFresh             <<< little to no change
+# runFresh             <<< little to no change     
 runHtmlParser
-# runLodash            <<< little to no change
+runLodash            
 runMime
 # runMobileDetect      <<< little to no change
 runMoment
@@ -54,9 +54,9 @@ runContentDos
 # runDebugDos         <<< little to no change
 runDnsSyncDos
 # runForwardedDos     <<< little to no change
-# runFreshDos         <<< little to no change
+# runFreshDos         <<< little to no change   
 runHtmlParserDos
-# runLodashDos        <<< little to no change
+runLodashDos        
 runMimeDos
 # runMobileDetectDos  <<< little to no change
 runMomentDos
