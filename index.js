@@ -110,7 +110,7 @@ app.post("/content/dos", (req, res, next) => {
           message: 'title is required'
         });
       }
-    var inp = formatter.content_type_parser(req.body.title);
+    var inp = formatter.content(req.body.title);
     var time_taken = measureTime(function (){content.disposition(inp)}); 
     return res.status(200).send({
         success: 'true',
